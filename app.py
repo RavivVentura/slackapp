@@ -18,9 +18,9 @@ def get_date():
     data = request.form
     user_name =data.get('user_name')
     url = data.get('text')
-    text = f'The request is from: {user_name} for url:{url}'
-    client.chat_postMessage(channel='#data-ops', text=text)
-    requests.get('https://hook.integromat.com/kbe5u7e7t6niwpolnc4wt7ma6kntps4a?url={}'.format(url))
+    #text = f'The request is from: {user_name} for url:{url}'
+    #client.chat_postMessage(channel='#data-ops', text=text)
+    requests.get('https://hook.integromat.com/kbe5u7e7t6niwpolnc4wt7ma6kntps4a?url={}&user_name={}'.format(url,user_name))
     return Response(), 200
 
 if __name__ == "__main__":
